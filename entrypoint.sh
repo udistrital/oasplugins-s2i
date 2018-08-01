@@ -35,7 +35,7 @@ elif [ -n "${PLUGIN_DESTIMG}" ]; then
   docker login --username "${DOCKER_USERNAME}" --password-stdin "${PLUGIN_REGISTRY}"  <<< "${DOCKER_PASSWORD}"
 fi
 
-s2i build
+s2i build --use-config
 
 if [ -n "${PLUGIN_DESTIMG}" ]; then
   docker tag "${s2i_tag}" "${PLUGIN_DESTIMG}"
