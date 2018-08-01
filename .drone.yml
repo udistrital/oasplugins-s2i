@@ -1,0 +1,8 @@
+pipeline:
+  docker:
+    tags: latest
+    image: plugins/docker
+    repo: oasplugins/s2i
+    secrets:
+      - docker_username
+      - docker_password
