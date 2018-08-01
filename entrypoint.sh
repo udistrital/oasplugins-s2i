@@ -11,7 +11,6 @@ nohup dockerd-entrypoint.sh > dockerd-entrypoint.log 2>dockerd-entrypoint.err &
 dockerd=$!
 
 cleanup() {
-  cat dockerd-entrypoint.err
   kill "${dockerd}"
 }
 
